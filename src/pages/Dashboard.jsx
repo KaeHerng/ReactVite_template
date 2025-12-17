@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import "../styles/Dashboard.css";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Dashboard() {
     const user = useSelector((state) => state.user.currentUser);
@@ -15,17 +16,28 @@ export default function Dashboard() {
         <div className="dashboard-container">
             <div className="dashboard-banner">
                 <h2>Welcome, {user?.name || "Guest"}!</h2>
-                <p>Here's your dashboard overview. sss</p>
+                <p>Here's your dashboard overview.</p>
             </div>
 
             <div className="dashboard-stats">
-                {stats.map((stat) => (
-                    <div key={stat.title} className="dashboard-card" onClick={stat.action}>
-                        <div className="card-icon">{stat.icon}</div>
-                        <div className="card-title">{stat.title}</div>
-                        <div className="card-value">{stat.value}</div>
-                    </div>
-                ))}
+                <AnimatePresence>
+                    {stats.map((stat) => (
+                        <motion.div
+                            key={stat.title}
+                            className="dashboard-card"
+                            onClick={stat.action}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            whileHover={{ scale: 1.05, boxShadow: "0px 8px 15px rgba(0,0,0,0.15)" }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <div className="card-icon">{stat.icon}</div>
+                            <div className="card-title">{stat.title}</div>
+                            <div className="card-value">{stat.value}</div>
+                        </motion.div>
+                    ))}
+                </AnimatePresence>
             </div>
 
             <div className="dashboard-actions">
