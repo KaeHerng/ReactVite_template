@@ -130,7 +130,7 @@ export default function TablePage() {
                         {Math.min(page * pageSize, filteredData.length)} of {filteredData.length} records
                     </div>
                 </div>
-                <div className="table-wrapper dark-wrapper">
+                <div className="table-wrapper dark-wrapper custom-scrollbar">
                     <table>
                         <thead className="sticky-header-dark">
                             <tr>
