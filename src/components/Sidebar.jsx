@@ -1,7 +1,16 @@
 import { NavLink } from "react-router-dom";
 import "../styles/sidebar.css";
+import { useTranslation } from "react-i18next";
 
-export default function Sidebar({ open, onClose }) {
+export default function Sidebar({ open, onClose, collapsed }) {
+    const { t } = useTranslation();
+    const links = [
+        { to: "/", label: "nav.dashboard", icon: "📊" },
+        { to: "/settings", label: "nav.settings", icon: "⚙️" },
+        { to: "/tables", label: "nav.tables", icon: "📋" },
+        { to: "/analytics", label: "nav.analytics", icon: "📈" },
+    ];
+
     return (
         <>
             <div
@@ -10,41 +19,20 @@ export default function Sidebar({ open, onClose }) {
             ></div>
 
             <aside className={`sidebar ${open ? "open" : ""}`}>
-                <div className="sidebar-logo">MyApp</div>
+                <div className="sidebar-logo">{collapsed ? "🟦" : "MyApp"}</div>
 
                 <nav className="sidebar-nav">
-                    <NavLink
-                        to="/"
-                        end
-                        onClick={onClose}
-                        className={({ isActive }) => (isActive ? "active" : "")}
-                    >
-                        Dashboard
-                    </NavLink>
-
-                    <NavLink
-                        to="/settings"
-                        onClick={onClose}
-                        className={({ isActive }) => (isActive ? "active" : "")}
-                    >
-                        Settings
-                    </NavLink>
-
-                    <NavLink
-                        to="/tables"
-                        onClick={onClose}
-                        className={({ isActive }) => (isActive ? "active" : "")}
-                    >
-                        tables
-                    </NavLink>
-
-                    <NavLink
-                        to="/analytics"
-                        onClick={onClose}
-                        className={({ isActive }) => (isActive ? "active" : "")}
-                    >
-                        Analytics
-                    </NavLink>
+                    {links.map((link) => (
+                        <NavLink
+                            key={link.to}
+                            to={link.to}
+                            end
+                            onClick={onClose}
+                            className={({ isActive }) => (isActive ? "active" : "")}>
+                            <span className="sidebar-icon">{link.icon}</span>
+                            {!collapsed && <span className="sidebar-label">{t(link.label)}</span>}
+                        </NavLink>
+                    ))}
                 </nav>
             </aside>
         </>

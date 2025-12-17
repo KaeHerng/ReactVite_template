@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "../styles/settings.css";
+import { useTranslation } from "react-i18next";
 
 export default function Settings() {
+    const { t } = useTranslation();
     const [username, setUsername] = useState("John Doe");
     const [email, setEmail] = useState("john@example.com");
     const [darkMode, setDarkMode] = useState(false);
@@ -11,18 +13,20 @@ export default function Settings() {
         <div className="settings-grid">
             {/* Profile Card */}
             <div className="settings-card">
-                <h3>Profile Settings</h3>
+                <h3>{t("settings.ProfileSettings")}</h3>
                 <label>
-                    Username
+                    {t("settings.Username")}
                     <input
+                        className="input-design"
                         type="text"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                     />
                 </label>
                 <label>
-                    Email
+                    {t("settings.Email")}
                     <input
+                        className="input-design"
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -33,7 +37,7 @@ export default function Settings() {
 
             {/* Theme Card */}
             <div className="settings-card">
-                <h3>Theme</h3>
+                <h3>{t("settings.Theme")}</h3>
                 <label className="switch">
                     <input
                         type="checkbox"
@@ -42,12 +46,12 @@ export default function Settings() {
                     />
                     <span className="slider"></span>
                 </label>
-                <p>{darkMode ? "Dark Mode" : "Light Mode"}</p>
+                <p>{darkMode ? t("settings.DarkMode") : t("settings.LightMode")}</p>
             </div>
 
             {/* Notifications Card */}
             <div className="settings-card">
-                <h3>Notifications</h3>
+                <h3>{t("settings.Notifications")}</h3>
                 <label className="switch">
                     <input
                         type="checkbox"
@@ -56,7 +60,7 @@ export default function Settings() {
                     />
                     <span className="slider"></span>
                 </label>
-                <p>{notifications ? "Enabled" : "Disabled"}</p>
+                <p>{notifications ? t("settings.Enable") : t("settings.Disable")}</p>
             </div>
 
             {/* Account Actions Card */}

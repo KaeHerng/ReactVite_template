@@ -5,21 +5,29 @@ import Navbar from "./Navbar";
 import "../styles/layout.css";
 
 export default function Layout() {
-    const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [sidebarOpen, setSidebarOpen] = useState(true); // 桌面默认展开
+    const [sidebarCollapsed, setSidebarCollapsed] = useState(false); // 桌面收起
+
+    const toggleSidebar = () => {
+        if (window.innerWidth <= 1024) {
+            setSidebarOpen(!sidebarOpen); // 移动端 overlay
+        } else {
+            setSidebarCollapsed(!sidebarCollapsed); // 桌面端收起/展开
+        }
+    };
 
     const closeSidebar = () => setSidebarOpen(false);
-    const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
     return (
-        <div className="layout">
+        <div className={`layout ${sidebarCollapsed ? "sidebar-collapsed" : ""}`}>
             <Sidebar open={sidebarOpen} onClose={closeSidebar} />
             <div className="main">
                 <Navbar onMenu={toggleSidebar} />
                 <main className="content">
-                    {/* 必须用 Outlet 来渲染子路由 */}
                     <Outlet />
                 </main>
             </div>
         </div>
     );
 }
+

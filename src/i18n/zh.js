@@ -1,0 +1,31 @@
+export default {
+    nav: {
+        dashboard: "仪表板",
+        settings: "设置",
+        tables: "表格",
+        analytics: "分析",
+    },
+    auth: {
+        login: "登录",
+        register: "注册",
+        email: "邮箱",
+        password: "密码",
+        alreadyHaveAccount: "已有账号？",
+        donthaveaccount: "没有账号？",
+    },
+    dashboard: {
+        welcome: "欢迎",
+        overview: "这是你的仪表板概览",
+    },
+    settings: {
+        ProfileSettings: "个人设置",
+        Username: "用户名",
+        Email: "邮箱",
+        Theme: "主题",
+        Notifications: "通知",
+        Enable: "启用",
+        Disable: "禁用",
+        DarkMode: "深色模式",
+        LightMode: "浅色模式",
+    }
+};

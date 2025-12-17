@@ -8,8 +8,50 @@ body,
     height: 100%;
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background-color: #f4f6f8;
-    color: #111827;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+/* Dark / Light theme classes controlled by ThemeContext */
+:root.light {
+    --bg: #f4f6f8;
+    --text: #111827;
+    --primary: #4338ca;
+    --hover: #5c4ad1;
+    --button-bg: #f9f9f9;
+    --Conteiner-bg: #ffffff;
+    --Conteiner-border: #e5e7eb;
+    --input-bg: #ffffff;
+    --input-border: #e5e7eb;
+
+    --sidebar-bg: #ffffff;
+    --sidebar-text: #374151;
+    --sidebar-hover-bg: #e0e7ff;
+    --sidebar-hover-text: #1e3a8a;
+    --sidebar-active-bg: #4338ca;
+    --sidebar-active-text: white;
+    --sidebar-border: #e5e7eb;
+}
+
+
+:root.dark {
+    --bg: #1f1f1f;
+    --text: #e5e7eb;
+    --primary: #8b63ff;
+    --hover: #a583ff;
+    --button-bg: #2a2a2a;
+    --Conteiner-bg: #2b2b2b;
+    --Conteiner-border: #444444;
+    --input-bg: #3d3d3d;
+    --input-border: #56595a;
+
+    --sidebar-bg: #2b2b2b;
+    --sidebar-text: #d1d5db;
+    --sidebar-hover-bg: #3c3c3c;
+    --sidebar-hover-text: #f3f4f6;
+    --sidebar-active-bg: #8b63ff;
+    --sidebar-active-text: white;
+    --sidebar-border: #444444;
 }
 
 /* 响应式字体 */

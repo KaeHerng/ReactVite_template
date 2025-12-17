@@ -31,10 +31,10 @@
 /* Individual card */
 .dashboard-card {
     cursor: pointer;
-    background: white;
+    background: var(--Conteiner-bg, #ffffff);
     border-radius: 12px;
     padding: 20px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--Conteiner-border, #e5e7eb);
     display: flex;
     flex-direction: column;
     justify-content: space-between;

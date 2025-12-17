@@ -1,8 +1,10 @@
 import { useSelector } from "react-redux";
 import "../styles/Dashboard.css";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function Dashboard() {
+    const { t } = useTranslation();
     const user = useSelector((state) => state.user.currentUser);
 
     const stats = [
@@ -15,8 +17,8 @@ export default function Dashboard() {
     return (
         <div className="dashboard-container">
             <div className="dashboard-banner">
-                <h2>Welcome, {user?.name || "Guest"}!</h2>
-                <p>Here's your dashboard overview.</p>
+                <h2>{t("dashboard.welcome")}, {user?.name || "Guest"}!</h2>
+                <p>{t("dashboard.overview")}</p>
             </div>
 
             <div className="dashboard-stats">

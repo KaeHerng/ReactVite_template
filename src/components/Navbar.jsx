@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { ThemeContext } from "../context/ThemeContext";
 import { logout as logoutAction } from "../redux/userSlice"; // 引入 Redux action
 import "../styles/navbar.css";
 
 export default function Navbar({ onMenu }) {
     const [showUserMenu, setShowUserMenu] = useState(false);
+    const { theme, toggleTheme } = useContext(ThemeContext);
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -18,13 +21,21 @@ export default function Navbar({ onMenu }) {
         <header className="navbar">
             <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
                 <button className="menu-btn" onClick={onMenu}>☰</button>
-                <span className="navbar-title">Dashboard</span>
+                {/* <span className="navbar-title">Dashboard</span>
                 <div className="navbar-search">
                     <input type="text" placeholder="Search..." />
-                </div>
+                </div> */}
             </div>
 
             <div className="navbar-actions">
+
+                <button
+                    className={`theme-toggle ${theme}`}
+                    onClick={toggleTheme}>
+                    {theme === "light" ? "🌞" : "🌙"}
+                </button>
+                <LanguageSwitcher />
+
                 <button className="notif-btn">🔔<span className="notif-badge">3</span></button>
 
                 <div className="user-menu-wrapper">

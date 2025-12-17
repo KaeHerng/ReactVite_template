@@ -1,23 +1,67 @@
 /* ----------------- Sidebar Container ----------------- */
 .sidebar {
     width: 260px;
-    background: linear-gradient(180deg, #ffffff, #f9fafb);
-    border-right: 1px solid #e5e7eb;
+    background: var(--sidebar-bg, linear-gradient(180deg, #ffffff, #f9fafb));
+    border-right: 1px solid var(--sidebar-border, #e5e7eb);
     padding: 20px;
     transition: all 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     z-index: 1000;
-    /* box-shadow: 2px 0 12px rgba(0, 0, 0, 0.05); */
     border-radius: 0 0px 0px 0;
+    color: var(--sidebar-text, #374151);
 }
 
 /* Logo */
 .sidebar-logo {
     font-size: 22px;
     font-weight: 800;
-    color: #1f2937;
+    color: var(--sidebar-text, #374151);
     margin-bottom: 32px;
     letter-spacing: 0.5px;
+}
+
+/* 桌面端收起变扁 */
+.layout.sidebar-collapsed .sidebar {
+    width: 80px;
+    /* 缩小宽度 */
+    padding: 20px 8px;
+    /* 缩小左右 padding */
+}
+
+/* Logo 收起处理 */
+.layout.sidebar-collapsed .sidebar-logo {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+/* nav a 收起处理 */
+.layout.sidebar-collapsed .sidebar-nav a {
+    justify-content: center;
+    /* icon/文字居中 */
+    padding: 12px 6px;
+}
+
+/* Icon */
+.sidebar-icon {
+    font-size: 18px;
+    display: inline-block;
+    width: 24px;
+    text-align: center;
+}
+
+/* Label */
+.sidebar-label {
+    margin-left: 12px;
+}
+
+/* 桌面端收起时隐藏 label */
+.layout.sidebar-collapsed .sidebar-label {
+    display: none;
+}
+
+.layout.sidebar-collapsed .sidebar-nav a {
+    justify-content: center;
 }
 
 /* Navigation Links */
@@ -28,7 +72,7 @@
     margin-bottom: 8px;
     border-radius: 10px;
     cursor: pointer;
-    color: #374151;
+    color: var(--sidebar-text, #374151);
     text-decoration: none;
     transition: all 0.2s ease;
     font-weight: 500;
@@ -37,18 +81,16 @@
 
 /* Hover effect with subtle shadow */
 .sidebar-nav a:hover {
-    background: #e0e7ff;
-    /* soft blue highlight */
-    color: #1e3a8a;
+    background: var(--sidebar-hover-bg, #e0e7ff);
+    color: var(--sidebar-hover-text, #1e3a8a);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     transform: translateX(2px);
 }
 
 /* Active link styling */
 .sidebar-nav .active {
-    background: #4338ca;
-    /* deep purple */
-    color: white;
+    background: var(--sidebar-active-bg, #4338ca);
+    color: var(--sidebar-active-text, white);
     font-weight: 600;
     box-shadow: 0 4px 12px rgba(67, 56, 202, 0.3);
 }
