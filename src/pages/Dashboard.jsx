@@ -15,7 +15,7 @@ export default function Dashboard() {
         <div className="dashboard-container">
             <div className="dashboard-banner">
                 <h2>Welcome, {user?.name || "Guest"}!</h2>
-                <p>Here's your dashboard overview.</p>
+                <p>Here's your dashboard overview. sss</p>
             </div>
 
             <div className="dashboard-stats">
