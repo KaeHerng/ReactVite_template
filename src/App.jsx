@@ -44,8 +44,7 @@ export default function App() {
 
         <Route
           path="/"
-          element={user ? <Layout logout={logout} /> : <Navigate to="/login" replace />}
-        >
+          element={user ? <Layout logout={logout} /> : <Navigate to="/login" replace />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/tables" element={<Tables />} />
