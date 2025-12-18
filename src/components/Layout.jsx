@@ -10,6 +10,7 @@ export default function Layout() {
 
     const toggleSidebar = () => {
         if (window.innerWidth <= 1024) {
+            setSidebarCollapsed(false)
             setSidebarOpen(!sidebarOpen); // 移动端 overlay
         } else {
             setSidebarCollapsed(!sidebarCollapsed); // 桌面端收起/展开

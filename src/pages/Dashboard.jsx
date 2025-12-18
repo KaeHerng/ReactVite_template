@@ -16,9 +16,13 @@ export default function Dashboard() {
 
     return (
         <div className="dashboard-container">
-            <div className="dashboard-banner">
-                <h2>{t("dashboard.welcome")}, {user?.name || "Guest"}!</h2>
-                <p>{t("dashboard.overview")}</p>
+            <div className="dashboard-banner mb-6 rounded-xl shadow-sm">
+                <h2 className="text-xl md:text-2xl font-semibold">
+                    {t("dashboard.welcome")}, {user?.name || "Guest"}!
+                </h2>
+                <p className="text-sm md:text-base opacity-80">
+                    {t("dashboard.overview")}
+                </p>
             </div>
 
             <div className="dashboard-stats">

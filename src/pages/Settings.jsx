@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/settings.css";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 export default function Settings() {
     const { t } = useTranslation();
@@ -9,10 +10,19 @@ export default function Settings() {
     const [darkMode, setDarkMode] = useState(false);
     const [notifications, setNotifications] = useState(true);
 
+    const cardVariants = {
+        hidden: { opacity: 0, scale: 0.8 },
+        visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
+    };
+
     return (
         <div className="settings-grid">
             {/* Profile Card */}
-            <div className="settings-card">
+            <motion.div
+                className="settings-card"
+                initial="hidden"
+                animate="visible"
+                variants={cardVariants}>
                 <h3>{t("settings.ProfileSettings")}</h3>
                 <label>
                     {t("settings.Username")}
@@ -33,10 +43,15 @@ export default function Settings() {
                     />
                 </label>
                 <button onClick={() => alert("Profile Updated!")}>Save</button>
-            </div>
+            </motion.div>
 
             {/* Theme Card */}
-            <div className="settings-card">
+            <motion.div
+                className="settings-card"
+                initial="hidden"
+                animate="visible"
+                variants={cardVariants}
+                transition={{ delay: 0.1 }}>
                 <h3>{t("settings.Theme")}</h3>
                 <label className="switch">
                     <input
@@ -47,10 +62,14 @@ export default function Settings() {
                     <span className="slider"></span>
                 </label>
                 <p>{darkMode ? t("settings.DarkMode") : t("settings.LightMode")}</p>
-            </div>
+            </motion.div>
 
             {/* Notifications Card */}
-            <div className="settings-card">
+            <motion.div initial="hidden"
+                animate="visible"
+                variants={cardVariants}
+                transition={{ delay: 0.2 }}
+                className="settings-card">
                 <h3>{t("settings.Notifications")}</h3>
                 <label className="switch">
                     <input
@@ -61,10 +80,14 @@ export default function Settings() {
                     <span className="slider"></span>
                 </label>
                 <p>{notifications ? t("settings.Enable") : t("settings.Disable")}</p>
-            </div>
+            </motion.div>
 
             {/* Account Actions Card */}
-            <div className="settings-card">
+            <motion.div initial="hidden"
+                animate="visible"
+                variants={cardVariants}
+                transition={{ delay: 0.3 }}
+                className="settings-card">
                 <h3>Account Actions</h3>
                 <button
                     className="danger"
@@ -78,7 +101,7 @@ export default function Settings() {
                 >
                     Delete Account
                 </button>
-            </div>
+            </motion.div>
         </div>
     );
 }
