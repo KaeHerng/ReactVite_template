@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import "../styles/Dashboard.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import Map from "../components/Map";
 
 export default function Dashboard() {
     const { t } = useTranslation();
@@ -36,8 +37,7 @@ export default function Dashboard() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             whileHover={{ scale: 1.05, boxShadow: "0px 8px 15px rgba(0,0,0,0.15)" }}
-                            transition={{ duration: 0.3 }}
-                        >
+                            transition={{ duration: 0.3 }}>
                             <div className="card-icon">{stat.icon}</div>
                             <div className="card-title">{stat.title}</div>
                             <div className="card-value">{stat.value}</div>
@@ -46,11 +46,17 @@ export default function Dashboard() {
                 </AnimatePresence>
             </div>
 
-            <div className="dashboard-actions">
+            <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="bg-gray-700 p-4 rounded">xx</div>
+                <div className="bg-gray-700 p-4 rounded">xx</div>
+            </div>
+
+            <div className="dashboard-actions" style={{ marginBottom: 15 }}>
                 <button onClick={() => alert("Creating new report...")}>Create Report</button>
                 <button onClick={() => alert("Exporting data...")}>Export Data</button>
                 <button onClick={() => alert("Refreshing stats...")}>Refresh Stats</button>
             </div>
+            <Map />
         </div>
     );
 }

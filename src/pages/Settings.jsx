@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "../styles/settings.css";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
@@ -8,12 +8,21 @@ export default function Settings() {
     const [username, setUsername] = useState("John Doe");
     const [email, setEmail] = useState("john@example.com");
     const [darkMode, setDarkMode] = useState(false);
+    const prevCountRef = useRef();
     const [notifications, setNotifications] = useState(true);
 
     const cardVariants = {
         hidden: { opacity: 0, scale: 0.8 },
         visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
     };
+
+    useEffect(() => {
+        prevCountRef.current = darkMode;
+    }, [darkMode])
+
+    const prevMode = prevCountRef.current;
+
+    console.log('prevMode', prevMode)
 
     return (
         <div className="settings-grid">
