@@ -12,6 +12,7 @@ export default {
         password: "Password",
         alreadyHaveAccount: "Already have an account?",
         donthaveaccount: "Don't have an account?",
+        Homepage: "Home Page",
     },
     dashboard: {
         welcome: "Welcome",

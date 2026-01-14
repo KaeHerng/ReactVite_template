@@ -5,6 +5,7 @@ import Settings from "./pages/Settings";
 // import Profile from "./pages/Profile";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
+import Homepage from "./pages/Auth/Homepage";
 import Tables from "./pages/tables";
 import { useState, useEffect } from "react";
 
@@ -41,6 +42,7 @@ export default function App() {
       <Routes>
         <Route path="/login" element={<Login setUser={login} />} />
         <Route path="/register" element={<Register setUser={login} />} />
+        <Route path="/Homepage" element={<Homepage />} />
 
         <Route
           path="/"
