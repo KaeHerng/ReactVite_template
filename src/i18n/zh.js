@@ -18,6 +18,7 @@ export default {
         password: "密码",
         alreadyHaveAccount: "已有账号？",
         donthaveaccount: "没有账号？",
+        Homepage: "主页",
     },
     dashboard: {
         welcome: "欢迎",

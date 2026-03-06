@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 * {
     box-sizing: border-box;
 }
@@ -15,6 +17,7 @@ body,
     /* font-family: "Patrick Hand", cursive; */
     /* letter-spacing: 0.1px; */
 }
+
 
 /* Dark / Light theme classes controlled by ThemeContext */
 :root.light {

@@ -4,6 +4,8 @@ import Tooltip from "../components/Tooltip";
 import "../styles/Dashboard.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import Map from "../components/Map";
+import ImageGrid from "../components/ImageGrid";
 
 export default function Dashboard() {
   const { t } = useTranslation();
