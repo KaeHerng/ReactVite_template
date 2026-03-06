@@ -1,0 +1,26 @@
+.multi-layer-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  /* 保持原本比例 */
+  height: calc(100vw / 1200 * 468.75);
+  max-height: 468.75px;
+  overflow: hidden; /* 避免 slide 出屏幕 */
+  margin-bottom: 15px;
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* ⚠️ 不写 transition / animation，全部交给 Framer Motion */
+}
+
+/* 可以保留类名方便扩展，例如以后加 hover / scroll 效果 */
+.opag {}
+.slidefull {}
+.slidefull2 {}

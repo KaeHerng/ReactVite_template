@@ -1,0 +1,141 @@
+.tasks-page {
+  padding: 5px;
+}
+
+.task-form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.task-form input,
+.task-form label {
+  padding: 5px;
+  background: var(--input-bg, #ffffff);
+  border-radius: 9px;
+  color: var(--text, #111827);
+  border: 1px solid var(--input-border, #d1d5db) !important;
+  outline: none;
+}
+
+.task-form button {
+  padding: 7px 16px;
+  border-radius: 8px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.task-form button:hover {
+  background: #3730a3;
+}
+
+.Editbutton {
+  color: var(--text);
+  border: 1px solid var(--input-border, #d1d5db);
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.column {
+  background: var(--Conteiner-bg, #ffffff);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  border-radius: 12px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.column h3 {
+  font-size: 17px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.task-card {
+  font-size: 14px;
+  background: var(--TaskCard-bg, #f9f9f9);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  cursor: grab;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.task-card h4 {
+  margin: 0 0 6px;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.delete-btn {
+  margin-top: 8px;
+  padding: 4px 8px;
+  background: #ef4444; /* red */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.2s;
+}
+
+.delete-btn:hover {
+  background: #b91c1c; /* darker red */
+}
+
+.MarkerFelt {
+  /* font-family: 'Marker Felt', cursive; */
+  /* font-family: "Permanent Marker", cursive; */
+  font-family: "Permanent Marker", "Marker Felt", cursive;
+}
+
+/* ================= Responsive ================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .task-form {
+    grid-template-columns: repeat(2, 1fr) auto;
+  }
+
+  .board {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .task-form {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .board {
+    grid-template-columns: 1fr;
+  }
+
+  .task-card {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .column h3 {
+    font-size: 15px;
+  }
+}

@@ -4,6 +4,12 @@ export default {
         settings: "Settings",
         tables: "Tables",
         analytics: "Analytics",
+        tasks: "Tasks",
+        testingpage: "Testing Page",
+        interviewtracker: "Interview Tracker",
+        expenses: "Expenses",
+        savings: "Savings",
+        typespeed: "Type Speed Test",
     },
     auth: {
         login: "Login",

@@ -1,0 +1,114 @@
+.expenses-page {
+  padding: 10px;
+}
+
+.expense-form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.expense-form input,
+.expense-form select {
+  padding: 5px;
+  background: var(--input-bg, #ffffff);
+  border-radius: 9px;
+  color: var(--text, #111827);
+  border: 1px solid var(--input-border, #d1d5db) !important;
+  outline: none;
+}
+
+.expense-form button {
+  padding: 7px 16px;
+  border-radius: 8px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.expense-form button:hover {
+  background: #3730a3;
+}
+
+.totals {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.records-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.record-card {
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  background: var(--TaskCard-bg, #f9f9f9);
+}
+
+.record-card.expense {
+  border-left: 4px solid red;
+}
+
+.record-card.income {
+  border-left: 4px solid green;
+}
+
+.record-buttons {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.record-buttons button {
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+.record-buttons button:hover {
+  opacity: 0.8;
+}
+
+/* ================= Responsive Design ================= */
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .expense-form {
+    grid-template-columns: repeat(2, 1fr) auto;
+    gap: 8px;
+  }
+
+  .records-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .expense-form {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .records-list {
+    grid-template-columns: 1fr;
+  }
+
+  .record-card {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .expense-form input,
+  .expense-form select,
+  .expense-form button {
+    width: 100%;
+  }
+}

@@ -4,6 +4,12 @@ export default {
         settings: "设置",
         tables: "表格",
         analytics: "分析",
+        tasks: "任务",
+        testingpage: "测试页面",
+        interviewtracker: "面试跟踪器",
+        expenses: "支出管理",
+        savings: "储蓄管理",
+        typespeed: "打字速度测试",
     },
     auth: {
         login: "登录",

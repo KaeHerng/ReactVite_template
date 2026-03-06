@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Pagination from "../components/pagination";
 import "../styles/tables.css"; // 自定义 CSS
 
@@ -57,6 +57,15 @@ export default function TablePage() {
 
     const handlePrev = () => setPage(Math.max(page - 1, 1));
     const handleNext = () => setPage(Math.min(page + 1, totalPagesFilter));
+
+    useEffect(() => {
+        const handleScroll = () => {
+            console.log(window.scrollY)
+        }
+        window.addEventListener('scroll', handleScroll)
+
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
 
     return (
         <div className="page-container">

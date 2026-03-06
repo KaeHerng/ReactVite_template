@@ -8,7 +8,13 @@ export default function Sidebar({ open, onClose, collapsed }) {
         { to: "/", label: "nav.dashboard", icon: "📊" },
         { to: "/settings", label: "nav.settings", icon: "⚙️" },
         { to: "/tables", label: "nav.tables", icon: "📋" },
-        { to: "/analytics", label: "nav.analytics", icon: "📈" },
+        { to: "/Tasks", label: "nav.tasks", icon: "📈" },
+        { to: "/Testingpage", label: "nav.testingpage", icon: "📈" },
+        { to: "/InterviewTracker", label: "nav.interviewtracker", icon: "💼" },
+        { to: "/Expenses", label: "nav.expenses", icon: "💰" },
+        { to: "/TypeSpeed", label: "nav.typespeed", icon: "⌨️" },
+        { to: "/Savings", label: "nav.savings", icon: "💰" },
+        { to: "/Flashcards", label: "nav.flashcards", icon: "🃏" },
     ];
 
     return (

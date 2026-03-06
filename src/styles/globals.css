@@ -10,6 +10,10 @@ body,
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     background-color: var(--bg);
     color: var(--text);
+    font-family: "Permanent Marker", "Marker Felt", cursive;
+    /* font-family: "Caveat", "Permanent Marker", "Marker Felt", cursive; */
+    /* font-family: "Patrick Hand", cursive; */
+    /* letter-spacing: 0.1px; */
 }
 
 /* Dark / Light theme classes controlled by ThemeContext */
@@ -20,9 +24,13 @@ body,
     --hover: #5c4ad1;
     --button-bg: #f9f9f9;
     --Conteiner-bg: #ffffff;
+    --TaskCard-bg: #f9f9f9;
     --Conteiner-border: #e5e7eb;
     --input-bg: #ffffff;
     --input-border: #e5e7eb;
+    --savings-hero-bg: #6f6acb;
+    --saving-table-bg: #f9f9f9;
+    --saving-table-hover: #e0f2fe;
 
     --sidebar-bg: #ffffff;
     --sidebar-text: #374151;
@@ -40,9 +48,13 @@ body,
     --hover: #a583ff;
     --button-bg: #2a2a2a;
     --Conteiner-bg: #2b2b2b;
+    --TaskCard-bg: #363636;
     --Conteiner-border: #444444;
     --input-bg: #3d3d3d;
     --input-border: #56595a;
+    --savings-hero-bg: #4f49bf;
+    --saving-table-bg: #4d4d4d;
+    --saving-table-hover: #555555;
 
     --sidebar-bg: #2b2b2b;
     --sidebar-text: #d1d5db;
@@ -55,11 +67,64 @@ body,
 
 /* 响应式字体 */
 body {
-    font-size: 16px;
+    font-size: 14px;
+}
+
+.loading-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+
+  /* 🔥 渐变背景 */
+  background: linear-gradient(
+    135deg,
+    #0f172a,
+    #1e293b,
+    #0f172a
+  );
+  background-size: 200% 200%;
+  animation: gradientMove 6s ease infinite;
+}
+
+/* 背景慢慢流动 */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.spinner {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #38bdf8,
+    #6366f1,
+    #9333ea,
+    #38bdf8
+  );
+
+  mask: radial-gradient(farthest-side, transparent 65%, black 66%);
+  -webkit-mask: radial-gradient(farthest-side, transparent 65%, black 66%);
+
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.4);
+}
+
+.loading-text {
+  margin-top: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #e2e8f0;
+  letter-spacing: 2px;
 }
 
 @media (max-width: 768px) {
     body {
-        font-size: 14px;
+        font-size: 13px;
     }
 }
