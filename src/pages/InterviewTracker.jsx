@@ -339,9 +339,6 @@ export default function Interviews() {
           </div>
         ))}
       </div>
-      {/* <div style={{ width: '100%', alignItems: 'center', display: 'flex', justifyContent: 'center' }}>
-
-      </div> */}
     </div>
   );
 }
