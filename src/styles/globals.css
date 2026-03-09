@@ -16,8 +16,7 @@ body,
     /* font-family: "Caveat", "Permanent Marker", "Marker Felt", cursive; */
     /* font-family: "Patrick Hand", cursive; */
     /* letter-spacing: 0.1px; */
-}
-
+} 
 
 /* Dark / Light theme classes controlled by ThemeContext */
 :root.light {
@@ -69,9 +68,6 @@ body,
 }
 
 /* 响应式字体 */
-body {
-    font-size: 14px;
-}
 
 .loading-container {
   position: relative;
@@ -120,14 +116,76 @@ body {
 
 .loading-text {
   margin-top: 25px;
-  font-size: 14px;
   font-weight: 500;
   color: #e2e8f0;
   letter-spacing: 2px;
 }
 
 @media (max-width: 768px) {
-    body {
+    /* body {
         font-size: 13px;
-    }
+    } */
+}
+
+/* body {
+  font-size: var(--font-paragraph);
+} */
+
+.container {
+  background: var(--input-bg, #ffffff);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+:root {
+  --font-header: 18px;
+  --font-paragraph: 14px;
+  --font-small: 13px;
+  --font-button: 13px;
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  :root {
+    --font-header: 17px;
+    --font-paragraph: 13px;
+    --font-small: 13px;
+    --font-button: 13px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  :root {
+    --font-header: 16px;
+    --font-paragraph: 12px;
+    --font-small: 12px;
+    --font-button: 11px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  :root {
+    --font-header: 15px;
+    --font-paragraph:11px;
+    --font-small: 11px;
+    --font-button: 11px;
+  }
+}
+
+.largeText {
+    font-size: var(--font-header);
+}
+
+.paragraph {
+    font-size: var(--font-paragraph);
+}
+
+.buttonText {
+    font-size: var(--font-button);
+}
+
+.smallText {
+    font-size: var(--font-small);
 }

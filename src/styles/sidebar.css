@@ -13,7 +13,6 @@
 
 /* Logo */
 .sidebar-logo {
-    font-size: 22px;
     font-weight: 800;
     color: var(--sidebar-text, #374151);
     margin-bottom: 32px;
@@ -30,7 +29,6 @@
 
 /* Logo 收起处理 */
 .layout.sidebar-collapsed .sidebar-logo {
-    font-size: 20px;
     text-align: center;
     margin-bottom: 32px;
 }
@@ -39,12 +37,11 @@
 .layout.sidebar-collapsed .sidebar-nav a {
     justify-content: center;
     /* icon/文字居中 */
-    padding: 12px 6px;
+    padding: 8px 6px;
 }
 
 /* Icon */
 .sidebar-icon {
-    font-size: 18px;
     display: inline-block;
     width: 24px;
     text-align: center;
@@ -68,7 +65,7 @@
 .sidebar-nav a {
     display: flex;
     align-items: center;
-    padding: 12px 16px;
+    padding: 10px 16px;
     margin-bottom: 8px;
     border-radius: 10px;
     cursor: pointer;
@@ -76,7 +73,6 @@
     text-decoration: none;
     transition: all 0.2s ease;
     font-weight: 500;
-    font-size: 15px;
 }
 
 /* Hover effect with subtle shadow */

@@ -171,11 +171,11 @@ export default function Interviews() {
   // -----------------------------
   return (
     <div className="tasks-page">
-      <h2>💼 <span style={{ color: 'red'}}>Power</span><span style={{ color: 'blue' }}>Kids</span> Interview Tracker</h2>
+      <h2 className="largeText" style={{ fontWeight: 'bold' }}>💼 <span style={{ color: 'red' }}>Power</span><span style={{ color: 'blue' }}>Kids</span> Interview Tracker</h2>
 
       <MultiLayerImage />
       {/* 面试创建表单 */}
-      <div className="task-form">
+      <div className="task-form paragraph">
         <input
           placeholder="Company"
           value={form.company}
@@ -199,8 +199,8 @@ export default function Interviews() {
             onChange={e => setForm({ ...form, date: e.target.value })}
           />
         </label>
-        <button onClick={handleAddInterview}>Add Interview</button>
-        <button onClick={handleExportExcel} style={{ marginBottom: 20 }}>
+        <button className="buttonText" onClick={handleAddInterview}>Add Interview</button>
+        <button className="buttonText" onClick={handleExportExcel} style={{ marginBottom: 20 }}>
           📄 Export to Excel
         </button>
       </div>
@@ -213,7 +213,7 @@ export default function Interviews() {
             className="column"
             onDragOver={e => e.preventDefault()}
             onDrop={() => handleDrop(status)}>
-            <h3>{`${status.toUpperCase()} (${getInterviewsByStatus(status).length})`}</h3>
+            <h3 className="largeText" style={{ fontWeight: 'bold' }}>{`${status.toUpperCase()} (${getInterviewsByStatus(status).length})`}</h3>
 
             {getInterviewsByStatus(status).map(item => (
               <div
@@ -233,6 +233,7 @@ export default function Interviews() {
                 {editingId === item.id ? (
                   <>
                     <input
+                      className="paragraph"
                       value={editForm.company}
                       onChange={e =>
                         setEditForm({ ...editForm, company: e.target.value })
@@ -240,6 +241,7 @@ export default function Interviews() {
                       placeholder="Company"
                     />
                     <input
+                      className="paragraph"
                       value={editForm.location}
                       onChange={e =>
                         setEditForm({ ...editForm, location: e.target.value })
@@ -247,6 +249,7 @@ export default function Interviews() {
                       placeholder="Location"
                     />
                     <input
+                      className="paragraph"
                       value={editForm.description}
                       onChange={e =>
                         setEditForm({ ...editForm, description: e.target.value })
@@ -254,6 +257,7 @@ export default function Interviews() {
                       placeholder="Description"
                     />
                     <input
+                      className="paragraph"
                       type="date"
                       value={editForm.date}
                       onChange={e =>
@@ -262,23 +266,23 @@ export default function Interviews() {
                     />
 
                     <div style={{ display: "flex", gap: 6, marginTop: 6 }}>
-                      <button onClick={() => handleEditSave(item.id)}>
+                      <button className="buttonText" onClick={() => handleEditSave(item.id)}>
                         💾 Save
                       </button>
-                      <button onClick={handleEditCancel}>
+                      <button className="buttonText" onClick={handleEditCancel}>
                         ❌ Cancel
                       </button>
                     </div>
                   </>
                 ) : (
                   <>
-                    <h4>{item.company}</h4>
-                    <p>{item.description}</p>
-                    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <h4 style={{ fontWeight: 'bold' }}>{item.company}</h4>
+                    <p className="paragraph">{item.description}</p>
+                    <div className="paragraph" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                         <small>{item.location} | {item.date}</small>
 
                         <button
-                          className="Editbutton"
+                          className="Editbutton buttonText"
                           onClick={() => handleEditStart(item)}>
                           ✏️ Edit
                         </button>
@@ -294,7 +298,7 @@ export default function Interviews() {
                     marginTop: "5px",
                   }}>
                   {item.status === "completed" && !item.offerDecision && (
-                    <div style={{ display: "flex", gap: 5 }}>
+                    <div className="smallText" style={{ display: "flex", gap: 5 }}>
                       <button onClick={() => handleOfferDecision(item.id, "Rejected")}>
                         Reject Offer
                       </button>
@@ -312,6 +316,7 @@ export default function Interviews() {
 
                   {item.offerDecision && (
                     <span
+                      className="smallText"
                       style={{
                         color:
                           item.offerDecision === "Accepted"
@@ -328,7 +333,7 @@ export default function Interviews() {
                   )}
 
                   <button
-                    className="delete-btn"
+                    className="delete-btn buttonText"
                     onClick={() => handleDeleteInterview(item.id)}
                   >
                     ❌ Delete

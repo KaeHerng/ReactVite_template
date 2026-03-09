@@ -23,7 +23,6 @@ export default function Savings() {
   });
   const [editingIndex, setEditingIndex] = useState(null);
   const [editForm, setEditForm] = useState(null);
-
   // -----------------------------
   // Save to localStorage
   // -----------------------------
@@ -100,18 +99,18 @@ export default function Savings() {
   // -----------------------------
   return (
     <div className="Savings-page">
-      <h2>💰 Savings & Investment Tracker</h2>
+      <h2 className="largeText">💰 Savings & Investment Tracker</h2>
 
       <div className="savings-heroSection">
-        <h3>Welcome to your Savings & Investments Tracker</h3>
-        <p>💡 Track safe savings, low-risk investments and grow your wealth.</p>
+        <h3 className="largeText">Welcome to your Savings & Investments Tracker</h3>
+        <p className="smallText">💡 Track safe savings, low-risk investments and grow your wealth.</p>
       </div>
 
       {/* Input Form */}
       <div className="savings-input">
-        <h3>💸 Add New Record</h3>
+        <h3 className="largeText">💸 Add New Record</h3>
 
-        <div className="input-row">
+        <div className="input-row paragraph">
           <input
             placeholder="Description"
             value={form.description}
@@ -215,17 +214,17 @@ export default function Savings() {
             <option>Infinite</option>
           </select>
 
-          <button onClick={addRecord}>Add Record</button>
+          <button className="buttonText" onClick={addRecord}>Add Record</button>
         </div>
       </div>
 
       {/* Records */}
       {records.length > 0 && (
         <div className="records-table">
-          <h3>📄 Records</h3>
+          <h3 className="largeText">📄 Records</h3>
           <table>
             <thead>
-              <tr>
+              <tr className="paragraph">
                 <th>Description</th>
                 <th>Amount</th>
                 <th>Type</th>
@@ -239,7 +238,7 @@ export default function Savings() {
               </tr>
             </thead>
 
-            <tbody>
+            <tbody className="smallText">
               {records.map((r, i) => (
                 <tr key={i}>
                   {editingIndex === i ? (
@@ -298,7 +297,7 @@ export default function Savings() {
       )}
 
       {/* Summary */}
-      <div className="summary">
+      <div className="summary paragraph">
         <h3>📊 Summary</h3>
         <p>💰 Total Savings: RM {totalSavings.toFixed(2)}</p>
         <p>💹 Total Investments: RM {totalInvests.toFixed(2)}</p>

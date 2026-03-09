@@ -152,12 +152,12 @@ export default function Expenses() {
   // -----------------------------
   return (
     <div className="expenses-page">
-      <h2>💰 Expense Tracker</h2>
+      <h2 className="largeText">💰 Expense Tracker</h2>
 
       {/* -----------------------------
           Filters: Month, Year, Reset
       ----------------------------- */}
-      <div className="expense-form" style={{ display: "flex", gap: 10, marginBottom: 10 }}>
+      <div className="expense-form paragraph" style={{ display: "flex", gap: 10, marginBottom: 10 }}>
         <select value={filterMonth} onChange={e => setFilterMonth(e.target.value)}>
           <option value="">All Months</option>
           {[...Array(12)].map((_, i) => (
@@ -172,13 +172,13 @@ export default function Expenses() {
           {years.map(year => <option key={year} value={year}>{year}</option>)}
         </select>
 
-        <button onClick={() => { setFilterMonth(""); setFilterYear(""); }}>Reset Filter</button>
+        <button className="buttonText" onClick={() => { setFilterMonth(""); setFilterYear(""); }}>Reset Filter</button>
       </div>
 
       {/* -----------------------------
           Search and Sort
       ----------------------------- */}
-      <div className="expense-form" style={{ display: "flex", gap: 10, marginBottom: 20, flexWrap: "wrap" }}>
+      <div className="expense-form paragraph" style={{ display: "flex", gap: 10, marginBottom: 20, flexWrap: "wrap" }}>
         <input
           type="text"
           placeholder="Search description..."
@@ -198,7 +198,7 @@ export default function Expenses() {
       {/* -----------------------------
           Add New Record Form
       ----------------------------- */}
-      <div className="expense-form">
+      <div className="expense-form paragraph">
         <input
           placeholder="Description"
           value={form.description}
@@ -235,13 +235,13 @@ export default function Expenses() {
           value={form.date}
           onChange={e => setForm({ ...form, date: e.target.value })}
         />
-        <button onClick={handleAddRecord}>Add Record</button>
+        <button className="buttonText" onClick={handleAddRecord}>Add Record</button>
       </div>
 
       {/* -----------------------------
           Totals Display
       ----------------------------- */}
-      <div className="totals">
+      <div className="totals paragraph">
         <p>Total Income: <b style={{color: "green"}}>RM {totalIncome}</b></p>
         <p>Total Expense: <b style={{color: "red"}}>RM {totalExpense}</b></p>
         <p>Balance: <b>RM {totalIncome - totalExpense}</b></p>
@@ -256,16 +256,19 @@ export default function Expenses() {
             {editingId === item.id ? (
               <>
                 <input
+                  className="paragraph"
                   value={editForm.description}
                   onChange={e => setEditForm({ ...editForm, description: e.target.value })}
                   placeholder="Description"
                 />
                 <input
+                  className="paragraph"
                   value={editForm.amount}
                   onChange={e => setEditForm({ ...editForm, amount: e.target.value })}
                   placeholder="Amount"
                 />
                 <select
+                  className="paragraph"
                   value={editForm.type}
                   onChange={e => setEditForm({ ...editForm, type: e.target.value })}
                 >
@@ -274,6 +277,7 @@ export default function Expenses() {
                 </select>
                 {editForm.type === "expense" && (
                   <select
+                    className="paragraph"
                     value={editForm.category}
                     onChange={e => setEditForm({ ...editForm, category: e.target.value })}
                   >
@@ -285,23 +289,24 @@ export default function Expenses() {
                   </select>
                 )}
                 <input
+                  className="paragraph"
                   type="date"
                   value={editForm.date}
                   onChange={e => setEditForm({ ...editForm, date: e.target.value })}
                 />
-                <div className="record-buttons">
+                <div className="record-buttons buttonText">
                   <button onClick={() => handleEditSave(item.id)}>💾 Save</button>
                   <button onClick={handleEditCancel}>❌ Cancel</button>
                 </div>
               </>
             ) : (
               <>
-                <h4>{item.description}</h4>
-                <p>
+                <h4 className="paragraph">{item.description}</h4>
+                <p className="smallText">
                   RM {item.amount} | {item.type} 
                   {item.type === "expense" && ` | ${item.category}`} | {item.date}
                 </p>
-                <div className="record-buttons">
+                <div className="record-buttons buttonText">
                   <button onClick={() => handleEditStart(item)}>✏️ Edit</button>
                   <button onClick={() => handleDelete(item.id)}>❌ Delete</button>
                 </div>

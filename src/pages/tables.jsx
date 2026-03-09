@@ -71,11 +71,11 @@ export default function TablePage() {
         <div className="page-container">
             {/* ===== Light Table ===== */}
             <div className="table-card light-table">
-                <h2>Light Table</h2>
+                <h2 className="largeText">Light Table</h2>
                 <div className="table-controls">
-                    <div className="control-left">
+                    <div className="control-left paragraph">
                         <label>Rows per page:</label>
-                        <select className="input-select" value={pageSize} onChange={handlePageSizeChange}>
+                        <select className="input-select paragraph" value={pageSize} onChange={handlePageSizeChange}>
                             {[5, 10, 20, 50].map((size) => (
                                 <option key={size} value={size}>
                                     {size}
@@ -83,21 +83,21 @@ export default function TablePage() {
                             ))}
                         </select>
                     </div>
-                    <div className="record-info">
+                    <div className="record-info paragraph">
                         Showing {(page - 1) * pageSize + 1} -{" "}
                         {Math.min(page * pageSize, filteredData.length)} of {filteredData.length} records
                     </div>
                 </div>
                 <div className="table-wrapper">
                     <table>
-                        <thead className="sticky-header">
+                        <thead className="sticky-header paragraph">
                             <tr>
                                 {columns.map((col) => (
                                     <th key={col}>{col}</th>
                                 ))}
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="paragraph">
                             {currentData.map((row) => (
                                 <tr key={row.id}>
                                     <td>{row.id}</td>
@@ -122,11 +122,11 @@ export default function TablePage() {
 
             {/* ===== Dark Table ===== */}
             <div className="table-card dark-table">
-                <h2>Dark Table</h2>
+                <h2 className="largeText">Dark Table</h2>
                 <div className="table-controls">
                     <div className="control-left">
                         <label>Rows per page:</label>
-                        <select className="input-select" value={pageSize} onChange={handlePageSizeChange}>
+                        <select className="input-select paragraph" value={pageSize} onChange={handlePageSizeChange}>
                             {[5, 10, 20, 50].map((size) => (
                                 <option key={size} value={size}>
                                     {size}
@@ -134,21 +134,21 @@ export default function TablePage() {
                             ))}
                         </select>
                     </div>
-                    <div className="record-info">
+                    <div className="record-info paragraph">
                         Showing {(page - 1) * pageSize + 1} -{" "}
                         {Math.min(page * pageSize, filteredData.length)} of {filteredData.length} records
                     </div>
                 </div>
                 <div className="table-wrapper dark-wrapper custom-scrollbar">
                     <table>
-                        <thead className="sticky-header-dark">
+                        <thead className="sticky-header-dark paragraph">
                             <tr>
                                 {columns.map((col) => (
                                     <th key={col}>{col}</th>
                                 ))}
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="paragraph">
                             {currentData.map((row) => (
                                 <tr key={row.id}>
                                     <td>{row.id}</td>
@@ -173,11 +173,11 @@ export default function TablePage() {
 
             {/* ===== Glass Table ===== */}
             <div className="table-card glass-table">
-                <h2>Glass Table</h2>
+                <h2 className="largeText">Glass Table</h2>
                 <div className="table-controls">
                     <div className="control-left">
                         <label>Rows per page:</label>
-                        <select className="input-select" value={pageSize} onChange={handlePageSizeChange}>
+                        <select className="input-select paragraph" value={pageSize} onChange={handlePageSizeChange}>
                             {[5, 10, 20, 50].map((size) => (
                                 <option key={size} value={size}>
                                     {size}
@@ -185,21 +185,21 @@ export default function TablePage() {
                             ))}
                         </select>
                     </div>
-                    <div className="record-info">
+                    <div className="record-info paragraph">
                         Showing {(page - 1) * pageSize + 1} -{" "}
                         {Math.min(page * pageSize, filteredData.length)} of {filteredData.length} records
                     </div>
                 </div>
                 <div className="table-wrapper glass-wrapper">
                     <table>
-                        <thead className="sticky-header-glass">
+                        <thead className="sticky-header-glass paragraph">
                             <tr>
                                 {columns.map((col) => (
                                     <th key={col}>{col}</th>
                                 ))}
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="paragraph">
                             {currentData.map((row) => (
                                 <tr key={row.id}>
                                     <td>{row.id}</td>
@@ -224,11 +224,11 @@ export default function TablePage() {
 
             {/* ===== Sticky Last Column Table ===== */}
             <div className="table-card sticky-table">
-                <h2>Sticky Last Column Table</h2>
+                <h2 className="largeText">Sticky Last Column Table</h2>
                 <div className="table-controls">
                     <div className="control-left">
                         <label>Rows per page:</label>
-                        <select className="input-select" value={pageSize} onChange={handlePageSizeChange}>
+                        <select className="input-select paragraph" value={pageSize} onChange={handlePageSizeChange}>
                             {[5, 10, 20, 50].map((size) => (
                                 <option key={size} value={size}>
                                     {size}
@@ -236,21 +236,21 @@ export default function TablePage() {
                             ))}
                         </select>
                     </div>
-                    <div className="record-info">
+                    <div className="record-info paragraph">
                         Showing {(page - 1) * pageSize + 1} -{" "}
                         {Math.min(page * pageSize, filteredData.length)} of {filteredData.length} records
                     </div>
                 </div>
                 <div className="table-wrapper sticky-wrapper">
                     <table>
-                        <thead className="sticky-header-gray">
+                        <thead className="sticky-header-gray paragraph">
                             <tr>
                                 {columns.map((col, idx) => (
                                     <th key={col} className={`table-cell-base ${idx === columns.length - 1 ? "table-cell-sticky-right" : ""}`}>{col}</th>
                                 ))}
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="paragraph">
                             {currentData.map((row) => (
                                 <tr key={row.id}>
                                     {columns.map((col, idx) => {
@@ -271,11 +271,11 @@ export default function TablePage() {
 
             {/* ===== Card Style Table ===== */}
             <div className="table-card card-table">
-                <h2>Card Style Table</h2>
+                <h2 className="largeText">Card Style Table</h2>
                 <div className="table-controls card-controls">
                     <div className="control-left">
                         <label>Rows per page:</label>
-                        <select className="input-select" value={pageSize} onChange={handlePageSizeChange}>
+                        <select className="input-select paragraph" value={pageSize} onChange={handlePageSizeChange}>
                             {[5, 10, 20, 50].map((size) => (
                                 <option key={size} value={size}>
                                     {size}
@@ -286,20 +286,20 @@ export default function TablePage() {
 
                     <div className="card-filters">
                         <input
-                            className="input-select"
+                            className="input-select paragraph"
                             type="text"
                             placeholder="Search by Name or Email..."
                             value={searchTerm}
                             onChange={(e) => { setSearchTerm(e.target.value); setPage(1); }}
                         />
-                        <select className="input-select" value={statusFilter} onChange={(e) => { setStatusFilter(e.target.value); setPage(1); }}>
+                        <select className="input-select paragraph" value={statusFilter} onChange={(e) => { setStatusFilter(e.target.value); setPage(1); }}>
                             <option value="">All Status</option>
                             <option value="Active">Active</option>
                             <option value="Inactive">Inactive</option>
                         </select>
                     </div>
 
-                    <div className="record-info">
+                    <div className="record-info paragraph">
                         Showing {(page - 1) * pageSize + 1} -{" "}
                         {Math.min(page * pageSize, filteredData.length)} of {filteredData.length} records
                     </div>
@@ -308,11 +308,11 @@ export default function TablePage() {
                 <div className="card-grid">
                     {filteredData.slice((page - 1) * pageSize, page * pageSize).map((row) => (
                         <div key={row.id} className="card-item">
-                            <div className="card-header">
+                            <div className="card-header paragraph">
                                 <h3>{row.name}</h3>
-                                <span className={row.status === "Active" ? "status-active" : "status-inactive"}>{row.status}</span>
+                                <span className={row.status === "Active" ? "status-active smallText" : "status-inactive smallText"}>{row.status}</span>
                             </div>
-                            <div className="card-body">
+                            <div className="card-body paragraph">
                                 <div><strong>Email:</strong> {row.email}</div>
                                 <div><strong>Age:</strong> {row.age}</div>
                                 <div><strong>Role:</strong> {row.role}</div>

@@ -25,14 +25,12 @@
 
 .settings-card h3 {
     margin: 0;
-    font-size: 18px;
     font-weight: 600;
 }
 
 .settings-card label {
     display: flex;
     flex-direction: column;
-    font-size: 13px;
     gap: 4px;
 }
 

@@ -59,13 +59,11 @@
 }
 
 .column h3 {
-  font-size: 17px;
   margin-bottom: 12px;
   text-align: center;
 }
 
 .task-card {
-  font-size: 14px;
   background: var(--TaskCard-bg, #f9f9f9);
   padding: 10px;
   border-radius: 10px;
@@ -92,7 +90,6 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 12px;
   transition: background 0.2s;
 }
 
@@ -131,11 +128,6 @@
   }
 
   .task-card {
-    font-size: 12px;
     padding: 10px;
-  }
-
-  .column h3 {
-    font-size: 15px;
   }
 }

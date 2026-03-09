@@ -10,6 +10,7 @@ export default {
         expenses: "Expenses",
         savings: "Savings",
         typespeed: "Type Speed Test",
+        components: "Components",
     },
     auth: {
         login: "Login",

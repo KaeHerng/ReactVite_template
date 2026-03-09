@@ -35,7 +35,6 @@
 
 .totals {
   margin-bottom: 20px;
-  font-size: 16px;
 }
 
 .records-list {
@@ -102,7 +101,6 @@
   }
 
   .record-card {
-    font-size: 14px;
     padding: 10px;
   }
 

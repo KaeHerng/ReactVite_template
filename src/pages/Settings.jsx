@@ -32,11 +32,11 @@ export default function Settings() {
                 initial="hidden"
                 animate="visible"
                 variants={cardVariants}>
-                <h3>{t("settings.ProfileSettings")}</h3>
-                <label>
+                <h3 className="largeText">{t("settings.ProfileSettings")}</h3>
+                <label className="paragraph">
                     {t("settings.Username")}
                     <input
-                        className="input-design"
+                        className="input-design paragraph"
                         type="text"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
@@ -45,13 +45,13 @@ export default function Settings() {
                 <label>
                     {t("settings.Email")}
                     <input
-                        className="input-design"
+                        className="input-design paragraph"
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </label>
-                <button onClick={() => alert("Profile Updated!")}>Save</button>
+                <button className="buttonText" onClick={() => alert("Profile Updated!")}>Save</button>
             </motion.div>
 
             {/* Theme Card */}
@@ -61,7 +61,7 @@ export default function Settings() {
                 animate="visible"
                 variants={cardVariants}
                 transition={{ delay: 0.1 }}>
-                <h3>{t("settings.Theme")}</h3>
+                <h3 className="largeText">{t("settings.Theme")}</h3>
                 <label className="switch">
                     <input
                         type="checkbox"
@@ -70,7 +70,7 @@ export default function Settings() {
                     />
                     <span className="slider"></span>
                 </label>
-                <p>{darkMode ? t("settings.DarkMode") : t("settings.LightMode")}</p>
+                <p className="paragraph">{darkMode ? t("settings.DarkMode") : t("settings.LightMode")}</p>
             </motion.div>
 
             {/* Notifications Card */}
@@ -79,7 +79,7 @@ export default function Settings() {
                 variants={cardVariants}
                 transition={{ delay: 0.2 }}
                 className="settings-card">
-                <h3>{t("settings.Notifications")}</h3>
+                <h3 className="largeText">{t("settings.Notifications")}</h3>
                 <label className="switch">
                     <input
                         type="checkbox"
@@ -88,7 +88,7 @@ export default function Settings() {
                     />
                     <span className="slider"></span>
                 </label>
-                <p>{notifications ? t("settings.Enable") : t("settings.Disable")}</p>
+                <p className="paragraph">{notifications ? t("settings.Enable") : t("settings.Disable")}</p>
             </motion.div>
 
             {/* Account Actions Card */}
@@ -97,17 +97,15 @@ export default function Settings() {
                 variants={cardVariants}
                 transition={{ delay: 0.3 }}
                 className="settings-card">
-                <h3>Account Actions</h3>
+                <h3 className="largeText">Account Actions</h3>
                 <button
-                    className="danger"
-                    onClick={() => alert("Logged out!")}
-                >
+                    className="danger buttonText"
+                    onClick={() => alert("Logged out!")}>
                     Logout
                 </button>
                 <button
-                    className="danger"
-                    onClick={() => alert("Account deleted!")}
-                >
+                    className="danger buttonText"
+                    onClick={() => alert("Account deleted!")}>
                     Delete Account
                 </button>
             </motion.div>

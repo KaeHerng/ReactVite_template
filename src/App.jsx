@@ -72,7 +72,6 @@ const Settings = lazy(() => import("./pages/Settings"));
 const Login = lazy(() => import("./pages/Auth/Login"));
 const Register = lazy(() => import("./pages/Auth/Register"));
 const Testingpage = lazy(() => import("./pages/Testingpage"));
-const Tasks = lazy(() => import("./pages/Tasks"));
 const Tables = lazy(() => import("./pages/tables"));
 const InterviewTracker = lazy(() => import("./pages/InterviewTracker"));
 const Savings = lazy(() => import("./pages/Savings"));
@@ -80,6 +79,7 @@ const Expenses = lazy(() => import("./pages/Expenses"));
 const TypeSpeed = lazy(() => import("./pages/Typespeed"));
 const Flashcards = lazy(() => import("./pages/Flashcards"));
 const AboutProduct = lazy(() => import("./pages/AboutProduct"));
+const Components = lazy(() => import("./pages/componentPage"));
 
 export default function App() {
   return (
@@ -102,7 +102,6 @@ export default function App() {
             <Route index element={<Dashboard />} />
             <Route path="settings" element={<Settings />} />
             <Route path="Testingpage" element={<Testingpage />} />
-            <Route path="Tasks" element={<Tasks />} />
             <Route path="AboutProduct" element={<AboutProduct />} />
             <Route path="Expenses" element={<Expenses />} />
             <Route path="InterviewTracker" element={<InterviewTracker />} />
@@ -110,6 +109,7 @@ export default function App() {
             <Route path="TypeSpeed" element={<TypeSpeed />} />
             <Route path="Flashcards" element={<Flashcards />} />
             <Route path="tables" element={<Tables />} />
+            <Route path="Components" element={<Components />} />
           </Route>
 
           {/* Fallback */}

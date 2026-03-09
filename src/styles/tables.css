@@ -81,10 +81,6 @@
     align-items: center;
 }
 
-.card-body div {
-    font-size: 14px;
-}
-
 /* Table wrapper */
 .table-wrapper {
     overflow: auto;
@@ -107,7 +103,6 @@ table {
     min-width: 900px;
     border-collapse: collapse;
     width: 100%;
-    font-size: 14px;
 }
 
 th {
@@ -135,7 +130,6 @@ tbody tr:hover {
     color: #166534;
     padding: 2px 8px;
     border-radius: 12px;
-    font-size: 12px;
 }
 
 .status-inactive {
@@ -143,7 +137,6 @@ tbody tr:hover {
     color: #991b1b;
     padding: 2px 8px;
     border-radius: 12px;
-    font-size: 12px;
 }
 
 .status-dark-active {
@@ -151,7 +144,6 @@ tbody tr:hover {
     color: #dcfce7;
     padding: 2px 8px;
     border-radius: 12px;
-    font-size: 12px;
 }
 
 .status-dark-inactive {
@@ -159,7 +151,6 @@ tbody tr:hover {
     color: #fee2e2;
     padding: 2px 8px;
     border-radius: 12px;
-    font-size: 12px;
 }
 
 .status-glass-active {
@@ -167,7 +158,6 @@ tbody tr:hover {
     color: #22c55e;
     padding: 2px 8px;
     border-radius: 12px;
-    font-size: 12px;
 }
 
 .status-glass-inactive {
@@ -175,7 +165,6 @@ tbody tr:hover {
     color: #ef4444;
     padding: 2px 8px;
     border-radius: 12px;
-    font-size: 12px;
 }
 
 .sticky-header {

@@ -33,10 +33,11 @@ export default function Login() {
   return (
     <div className="auth-container">
       <form className="auth-form" onSubmit={handleLogin}>
-        <h2 style={{ color: "black" }}>{t("auth.login")}</h2>
+        <h2 className="largeText" style={{ color: "black" }}>{t("auth.login")}</h2>
 
         <input
           type="email"
+          className="paragraph"
           placeholder={t("auth.email")}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -49,9 +50,9 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button type="submit">{t("auth.login")}</button>
+        <button className="buttonText" type="submit">{t("auth.login")}</button>
 
-        <p style={{ color: "black" }}>
+        <p className="smallText" style={{ color: "black" }}>
           {t("auth.donthaveaccount")}{" "}
           <Link to="/register">{t("auth.register")}</Link>
         </p>

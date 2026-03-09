@@ -214,7 +214,7 @@ export default function Dashboard() {
   return (
     <div className="dashboard-container">
       <div className="dashboard-banner">
-        <h2>{t("dashboard.welcome")}, {user?.name || "Guest"}!</h2>
+        <h2 className="largeText">{t("dashboard.welcome")}, {user?.name || "Guest"}!</h2>
         <p>{t("dashboard.overview")}</p>
       </div>
 
@@ -231,28 +231,28 @@ export default function Dashboard() {
               whileHover={{ scale: 1.05, boxShadow: "0px 8px 15px rgba(0,0,0,0.15)" }}
               transition={{ duration: 0.3 }}>
               <div className="card-icon">{stat.icon}</div>
-              <div className="card-title">{stat.title}</div>
-              <div className="card-value">{stat.value}</div>
+              <div className="card-title paragraph">{stat.title}</div>
+              <div className="card-value largeText">{stat.value}</div>
             </motion.div>
           ))}
         </AnimatePresence>
       </div>
 
       <div className="dashboard-actions">
-        <button onClick={() => alert("Creating new report...")}>Create Report</button>
-        <button onClick={() => alert("Exporting data...")}>Export Data</button>
-        <button onClick={() => alert("Refreshing stats...")}>Refresh Stats</button>
+        <button className="buttonText" onClick={() => alert("Creating new report...")}>Create Report</button>
+        <button className="buttonText" onClick={() => alert("Exporting data...")}>Export Data</button>
+        <button className="buttonText" onClick={() => alert("Refreshing stats...")}>Refresh Stats</button>
       </div>
       <Tooltip text="This is a tooltip!">
-        <div>try Hover ME !!!</div>
+        <div className="paragraph">try Hover ME !!!</div>
       </Tooltip>
 
       <div onMouseEnter={() => setdisplay(true)} onMouseLeave={() => setdisplay(false)} style={{ position: 'relative', marginTop: 30 }}>
-        {display && <div style={{ position: 'absolute', top: -20}}> this is tooltips !!!</div>}
-        <div>Hover Me !!</div>
+        {display && <div className="paragraph" style={{ position: 'absolute', top: -20}}> this is tooltips !!!</div>}
+        <div className="paragraph">Hover Me !!</div>
       </div>
 
-      <div class="Gridcontainer2" style={{ width: '100%' }}>
+      <div className="Gridcontainer2 paragraph" style={{ width: '100%' }}>
         <div style={{ padding: 5, border: '1px solid grey', borderRadius: 5 }}>Box 1</div>
         <div style={{ padding: 5, border: '1px solid grey', borderRadius: 5 }}>Box 2</div>
         <div style={{ padding: 5, border: '1px solid grey', borderRadius: 5 }}>Box 3</div>
@@ -260,7 +260,7 @@ export default function Dashboard() {
         <div style={{ padding: 5, border: '1px solid grey', borderRadius: 5 }}>Box 5</div> */}
       </div>
 
-      <div style={{ border: '1px solid grey', borderRadius: 5, padding: 5 }} onClick={handleClickME}>Click Me</div>
+      <div className="paragraph" style={{ border: '1px solid grey', borderRadius: 5, padding: 5 }} onClick={handleClickME}>Click Me</div>
 
       {/* 
             <button className="btn" onClick={confirmQ2}>

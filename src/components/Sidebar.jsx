@@ -8,7 +8,7 @@ export default function Sidebar({ open, onClose, collapsed }) {
         { to: "/", label: "nav.dashboard", icon: "📊" },
         { to: "/settings", label: "nav.settings", icon: "⚙️" },
         { to: "/tables", label: "nav.tables", icon: "📋" },
-        { to: "/Tasks", label: "nav.tasks", icon: "📈" },
+        { to: "/Components", label: "nav.components", icon: "📈" },
         { to: "/Testingpage", label: "nav.testingpage", icon: "📈" },
         { to: "/InterviewTracker", label: "nav.interviewtracker", icon: "💼" },
         { to: "/Expenses", label: "nav.expenses", icon: "💰" },
@@ -25,9 +25,9 @@ export default function Sidebar({ open, onClose, collapsed }) {
             ></div>
 
             <aside className={`sidebar ${open ? "open" : ""}`}>
-                <div className="sidebar-logo">{collapsed ? "🟦" : "MyApp"}</div>
+                <div className="sidebar-logo largeText">{collapsed ? "🟦" : "MyApp"}</div>
 
-                <nav className="sidebar-nav">
+                <nav className="sidebar-nav paragraph">
                     {links.map((link) => (
                         <NavLink
                             key={link.to}

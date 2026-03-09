@@ -1,0 +1,93 @@
+.checkbox-group {
+  display: flex;
+  gap: 12px;
+}
+
+.checkbox-group.vertical {
+  flex-direction: column;
+}
+
+.checkbox-group.horizontal {
+  flex-direction: row;
+}
+
+/* ITEM */
+
+.checkbox-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.checkbox-item:hover {
+  background: #f8fafc;
+}
+
+/* CARD STYLE */
+
+.checkbox-group.card .checkbox-item {
+  border: 1px solid #e5e7eb;
+}
+
+.checkbox-group.card .checkbox-item.checked {
+  border-color: #6366f1;
+  background: #eef2ff;
+}
+
+/* CONTROL */
+
+.checkbox-control {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #cbd5e1;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.checkbox-check {
+  width: 10px;
+  height: 10px;
+  background: #6366f1;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.2s ease;
+}
+
+/* CHECKED */
+
+.checkbox-item.checked .checkbox-control {
+  border-color: #6366f1;
+}
+
+.checkbox-item.checked .checkbox-check {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* LABEL */
+
+.checkbox-label {
+  user-select: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.checkbox-description {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* DISABLED */
+
+.checkbox-item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

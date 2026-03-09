@@ -12,12 +12,10 @@
 
 .dashboard-banner h2 {
     margin: 0;
-    font-size: 24px;
 }
 
 .dashboard-banner p {
     margin: 0;
-    font-size: 14px;
     opacity: 0.9;
 }
 
@@ -53,13 +51,11 @@
 
 .card-title {
     margin-top: 12px;
-    font-size: 14px;
     color: #6b7280;
 }
 
 .card-value {
     margin-top: 4px;
-    font-size: 28px;
     font-weight: 700;
 }
 

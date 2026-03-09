@@ -24,21 +24,23 @@ export default function Register({ setUser }) {
     return (
         <div className="auth-container">
             <form className="auth-form" onSubmit={handleRegister}>
-                <h2 style={{ color: "black" }}>{t("auth.register")}</h2>
+                <h2 className="largeText" style={{ color: "black" }}>{t("auth.register")}</h2>
                 <input
                     type="email"
                     placeholder={t("auth.email")}
                     value={email}
+                    className="paragraph"
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <input
                     type="password"
+                    className="paragraph"
                     placeholder={t("auth.password")}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <button type="submit">{t("auth.register")}</button>
-                <p style={{ color: "black" }}>
+                <button className="buttonText" type="submit">{t("auth.register")}</button>
+                <p className="smallText" style={{ color: "black" }}>
                     {t("auth.alreadyHaveAccount")} <Link to="/login">{t("auth.login")}</Link>
                 </p>
             </form>

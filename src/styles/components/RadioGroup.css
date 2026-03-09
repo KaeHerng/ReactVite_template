@@ -1,0 +1,102 @@
+.radio-group {
+  display: flex;
+  gap: 12px;
+}
+
+.radio-group.vertical {
+  flex-direction: column;
+}
+
+.radio-group.horizontal {
+  flex-direction: row;
+}
+
+/* RADIO ITEM */
+
+.radio-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.radio-item:hover {
+  background: #f8fafc;
+}
+
+/* CARD STYLE */
+
+.radio-group.card .radio-item {
+  border: 1px solid #e5e7eb;
+}
+
+.radio-group.card .radio-item.selected {
+  border-color: #6366f1;
+  background: #eef2ff;
+}
+
+/* RADIO CIRCLE */
+
+.radio-control {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.radio-dot {
+  width: 8px;
+  height: 8px;
+  background: #6366f1;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.2s ease;
+}
+
+/* SELECTED */
+
+.radio-item.selected .radio-control {
+  border-color: #6366f1;
+}
+
+.radio-item.selected .radio-dot {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* CONTENT */
+
+.radio-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.radio-description {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* DISABLED */
+
+.radio-item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* FOCUS */
+
+.radio-item:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+}
