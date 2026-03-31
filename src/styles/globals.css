@@ -16,31 +16,33 @@ body,
     /* font-family: "Caveat", "Permanent Marker", "Marker Felt", cursive; */
     /* font-family: "Patrick Hand", cursive; */
     /* letter-spacing: 0.1px; */
-} 
+}
 
 /* Dark / Light theme classes controlled by ThemeContext */
 :root.light {
-    --bg: #f4f6f8;
+    --bg: #ffffff;
     --text: #111827;
     --primary: #4338ca;
     --hover: #5c4ad1;
     --button-bg: #f9f9f9;
     --Conteiner-bg: #ffffff;
     --TaskCard-bg: #f9f9f9;
-    --Conteiner-border: #e5e7eb;
+    --Conteiner-border: #dde0e7;
     --input-bg: #ffffff;
     --input-border: #e5e7eb;
     --savings-hero-bg: #6f6acb;
     --saving-table-bg: #f9f9f9;
     --saving-table-hover: #e0f2fe;
 
-    --sidebar-bg: #ffffff;
+    --sidebar-bg: #f4f6f8;
     --sidebar-text: #374151;
     --sidebar-hover-bg: #e0e7ff;
     --sidebar-hover-text: #1e3a8a;
     --sidebar-active-bg: #4338ca;
     --sidebar-active-text: white;
     --sidebar-border: #e5e7eb;
+    --navbar-border: #d8dade;
+    --date-input-bg: #e2e2e2;
 }
 
 :root.dark {
@@ -65,6 +67,8 @@ body,
     --sidebar-active-bg: #8b63ff;
     --sidebar-active-text: white;
     --sidebar-border: #444444;
+    --navbar-border: #444444;
+    --date-input-bg: #474747;
 }
 
 /* 响应式字体 */
@@ -132,7 +136,8 @@ body,
 } */
 
 .container {
-  background: var(--input-bg, #ffffff);
+  background: var(--Conteiner-bg, #ffffff);
+  border: 1px solid var(--Conteiner-border, #e5e7eb);
   border-radius: 10px;
   padding: 15px;
 }

@@ -40,8 +40,7 @@ const MultiSelectDropdown = ({ options = [], selected = [], onChange }) => {
       {/* INPUT AREA */}
       <div
         className={`multiselect-input ${isOpen ? "active" : ""}`}
-        onClick={() => setIsOpen(!isOpen)}
-      >
+        onClick={() => setIsOpen(!isOpen)}>
         {selectedItems.length === 0 && (
           <span className="placeholder">Select options...</span>
         )}
@@ -52,8 +51,7 @@ const MultiSelectDropdown = ({ options = [], selected = [], onChange }) => {
               {item.label}
               <button
                 className="remove-btn"
-                onClick={(e) => removeItem(item.value, e)}
-              >
+                onClick={(e) => removeItem(item.value, e)}>
                 ×
               </button>
             </span>

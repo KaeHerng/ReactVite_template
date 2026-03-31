@@ -91,8 +91,7 @@ export default function BoldAgency() {
                   href={`#${item.toLowerCase()}`}
                   onMouseEnter={() => onHover(true)}
                   onMouseLeave={() => onHover(false)}
-                  className="relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-accent hover:after:w-full after:transition-all"
-                >
+                  className="relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-accent hover:after:w-full after:transition-all">
                   {item}
                 </a>
               </li>
@@ -159,8 +158,7 @@ export default function BoldAgency() {
       <div className="bg-[#ccff00] overflow-hidden py-6 border-b border-border text-black font-bold">
         <div
           ref={tickerRef}
-          className="flex w-[200%] whitespace-nowrap tracking-[-0.09em]"
-        >
+          className="flex w-[200%] whitespace-nowrap tracking-[-0.09em]">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex">
               {Array(4)
@@ -246,8 +244,7 @@ export default function BoldAgency() {
           href="mailto:hello@bold.agency"
           onMouseEnter={() => onHover(true)}
           onMouseLeave={() => onHover(false)}
-          className="text-2xl underline underline-offset-8"
-        >
+          className="text-2xl underline underline-offset-8">
           hello@bold.agency
         </a>
       </footer>

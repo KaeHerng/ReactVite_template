@@ -43,8 +43,7 @@ const RadioGroup = ({
             role="radio"
             aria-checked={isSelected}
             onKeyDown={(e) => handleKeyDown(e, index)}
-            onClick={() => !isDisabled && onChange(opt.value)}
-          >
+            onClick={() => !isDisabled && onChange(opt.value)}>
             <div className="radio-control">
               <div className="radio-dot"></div>
             </div>

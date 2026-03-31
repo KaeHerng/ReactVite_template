@@ -1,0 +1,39 @@
+export default {
+    nav: {
+        dashboard: "แดชบอร์ด",
+        settings: "การตั้งค่า",
+        tables: "ตาราง",
+        analytics: "วิเคราะห์",
+        tasks: "งาน",
+        testingpage: "หน้าทดสอบ",
+        interviewtracker: "ติดตามการสัมภาษณ์",
+        expenses: "การจัดการค่าใช้จ่าย",
+        savings: "การจัดการเงินออม",
+        typespeed: "การทดสอบความเร็วในการพิมพ์",
+        components: "คอมโพเนนต์ที่สามารถใช้ซ้ำได้",
+    },
+    auth: {
+        login: "เข้าสู่ระบบ",
+        register: "สมัครสมาชิก",
+        email: "อีเมล",
+        password: "รหัสผ่าน",
+        alreadyHaveAccount: "มีบัญชีแล้ว?",
+        donthaveaccount: "ไม่มีบัญชี?",
+        Homepage: "หน้าแรก",
+    },
+    dashboard: {
+        welcome: "ยินดีต้อนรับ",
+        overview: "นี่คือภาพรวมของแดชบอร์ดของคุณ",
+    },
+    settings: {
+        ProfileSettings: "การตั้งค่าโปรไฟล์",
+        Username: "ชื่อผู้ใช้",
+        Email: "อีเมล",
+        Theme: "ธีม",
+        Notifications: "การแจ้งเตือน",
+        Enable: "เปิดใช้งาน",
+        Disable: "ปิดใช้งาน",
+        DarkMode: "โหมดมืด",
+        LightMode: "โหมดสว่าง",
+    }
+};

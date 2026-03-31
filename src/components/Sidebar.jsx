@@ -21,8 +21,8 @@ export default function Sidebar({ open, onClose, collapsed }) {
         <>
             <div
                 className={`sidebar-backdrop ${open ? "visible" : ""}`}
-                onClick={onClose}
-            ></div>
+                onClick={onClose}>
+            </div>
 
             <aside className={`sidebar ${open ? "open" : ""}`}>
                 <div className="sidebar-logo largeText">{collapsed ? "🟦" : "MyApp"}</div>

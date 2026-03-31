@@ -166,6 +166,15 @@ export default function Interviews() {
     saveAs(blob, "Interview_Records.xlsx");
   };
 
+
+  // useEffect(() => {
+  //   console.log("mounted");
+
+  //   return () => {
+  //     console.log("unmounted");
+  //   };
+  // }, []);
+
   // -----------------------------
   // 8️⃣ JSX Render
   // -----------------------------
@@ -177,23 +186,27 @@ export default function Interviews() {
       {/* 面试创建表单 */}
       <div className="task-form paragraph">
         <input
-          placeholder="Company"
+          className="task-input"
+          placeholder="Company ..."
           value={form.company}
           onChange={e => setForm({ ...form, company: e.target.value })}
         />
         <input  
-          placeholder="Location"
+          className="task-input"
+          placeholder="Location ..."
           value={form.location}
           onChange={e => setForm({ ...form, location: e.target.value })}
         />
         <input
-          placeholder="Description"
+          className="task-input"
+          placeholder="Description ..."
           value={form.description}
           onChange={e => setForm({ ...form, description: e.target.value })}
         />
-        <label>
+        <label style={{ display: 'flex', alignItems: 'center'}}>
           Date:
           <input
+            className="task-date"
             type="date"
             value={form.date}
             onChange={e => setForm({ ...form, date: e.target.value })}

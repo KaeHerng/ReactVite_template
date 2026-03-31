@@ -14,7 +14,7 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   border-radius: 10px;
   padding: 20px;
-  border: 1px solid var(--input-border, #d1d5db);
+  border: 1px solid var(--Conteiner-border, #e5e7eb);
   margin-bottom: 20px;
 }
 
@@ -101,6 +101,7 @@
 
 .summary {
   background: var(--input-bg, #ffffff);
+  border: 1px solid var(--Conteiner-border, #e5e7eb);
   border-radius: 10px;
   padding: 15px;
   margin-top: 20px;

@@ -10,8 +10,7 @@ export default function Pagination({ page, totalPages, setPage }) {
             <button
                 onClick={handlePrev}
                 disabled={page === 1}
-                className="pagination-button prev-next"
-            >
+                className="pagination-button prev-next">
                 Prev
             </button>
 
@@ -34,8 +33,7 @@ export default function Pagination({ page, totalPages, setPage }) {
                             <button
                                 onClick={() => setPage(p)}
                                 className={`pagination-button ${p === page ? "active" : ""
-                                    }`}
-                            >
+                                    }`}>
                                 {p}
                             </button>
                         </span>
@@ -45,8 +43,7 @@ export default function Pagination({ page, totalPages, setPage }) {
             <button
                 onClick={handleNext}
                 disabled={page === totalPages}
-                className="pagination-button prev-next"
-            >
+                className="pagination-button prev-next">
                 Next
             </button>
         </div>

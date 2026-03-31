@@ -35,7 +35,7 @@
 .glass-table {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(113, 113, 113, 0.3);
 }
 
 /* Sticky Table */
@@ -53,6 +53,7 @@
 
 /* Card Table */
 .card-table .card-grid {
+    border: 1px solid var(--Conteiner-border, #e5e7eb);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 16px;

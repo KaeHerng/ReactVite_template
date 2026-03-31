@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { loginFNC } from "../../api";
 import { login } from "../../redux/userSlice";
 import "../../styles/auth.css";
 
@@ -12,22 +13,38 @@ export default function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    if (!email || !password) {
-      alert("请输入邮箱和密码");
-      return;
+    // if (!email || !password) {
+    //   alert("请输入邮箱和密码");
+    //   return;
+    // }
+
+    try {
+      const res = await loginFNC(email, password);
+
+      if (!res.data) {
+        alert(res.message || "Login failed");
+        return;
+      }
+
+      const { token, admin } = res.data;
+
+      console.log("token", token);
+
+      const userData = {
+        email: admin.username,
+        name: admin.name,
+        role: admin.role_name,
+      };
+
+      dispatch(login(userData));
+      navigate("/");
+
+    } catch (err) {
+      alert(err.message);
     }
-
-    const userData = {
-      email,
-      name: "Obama, Trump",
-      role: "admin",
-    };
-
-    dispatch(login(userData));
-    navigate("/");
   };
 
   return (

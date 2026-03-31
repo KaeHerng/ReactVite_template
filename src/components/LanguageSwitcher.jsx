@@ -26,6 +26,12 @@ export default function LanguageSwitcher() {
                 style={{ ...buttonStyle, ...(current.startsWith("zh") ? activeStyle : {}) }}>
                 中文
             </button>
+
+            <button
+                onClick={() => changeLang("thai")}
+                style={{ ...buttonStyle, ...(current.startsWith("thai") ? activeStyle : {}) }}>
+                ไทย
+            </button>
         </div>
     );
 }

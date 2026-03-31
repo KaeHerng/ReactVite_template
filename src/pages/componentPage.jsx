@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import MultiSelectDropdown from "../components/MultiSelectDropDown";
 import RadioGroup from "../components/RadioGroup";
 import CheckboxGroup from "../components/CheckboxGroup";
+import ThreeDImageCarousel from "../components/ThreeDImageCarousel";
 
 export default function Components() {
 
@@ -71,6 +72,17 @@ export default function Components() {
   ];
 
   // -----------------------------
+  // 8️⃣ ThreeDImageCarousel State
+  // -----------------------------
+  const slides = [
+    { id: 1, src: "https://png.pngtree.com/png-vector/20240829/ourmid/pngtree-delicious-and-testy-cheese-burger-png-image_13659847.png", href: "#" },
+    { id: 2, src: "https://png.pngtree.com/png-clipart/20250510/original/pngtree-burger-png-image_19773597.png", href: "#" },
+    { id: 3, src: "https://png.pngtree.com/png-clipart/20240830/original/pngtree-burger-with-floating-ingredient-png-image_15881303.png", href: "#" },
+    { id: 4, src: "https://png.pngtree.com/png-clipart/20240610/original/pngtree-fast-food-big-burger-png-image_15295528.png", href: "#" },
+    { id: 5, src: "https://img.pikbest.com/png-images/20241202/tasty-fresh-beef-burger-with-delicious-cheese-free-png-and-clipart_11160704.png!w700wp", href: "#" }
+  ];
+
+  // -----------------------------
   // 8️⃣ JSX Render
   // -----------------------------
   return (
@@ -99,7 +111,7 @@ export default function Components() {
               direction="vertical"
             />
         </div>
-        <div className="container"> 
+        <div className="container" > 
             <div className="mb-10 font-semibold">Checkbox Group</div>
             <CheckboxGroup
               options={checkoptions}
@@ -109,7 +121,16 @@ export default function Components() {
               selectAll
             />
         </div>
-        <div className="container"> xxx </div>
+        <div className="container"> 
+            <div className="mb-10 font-semibold">3D Image Carousel</div>
+            <div style={{ width: '100%' }}>
+              <ThreeDImageCarousel
+                slides={slides}
+                autoplay={true}
+                delay={3}
+              />
+            </div>
+        </div>
         <div className="container"> xxx </div>
         <div className="container"> xxx </div>
         <div className="container"> xxx </div>

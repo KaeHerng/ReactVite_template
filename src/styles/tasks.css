@@ -9,11 +9,29 @@
   margin-bottom: 24px;
 }
 
-.task-form input,
 .task-form label {
-  padding: 5px;
+  padding: 2px 5px;
   background: var(--input-bg, #ffffff);
-  border-radius: 9px;
+  border-radius: 10px;
+  color: var(--text, #111827);
+  border: 1px solid var(--input-border, #d1d5db) !important;
+  outline: none;
+}
+
+.task-input {
+  padding: 2px 5px;
+  background: var(--input-bg, #ffffff);
+  border-radius: 10px;
+  color: var(--text, #111827);
+  border: 1px solid var(--input-border, #d1d5db) !important;
+  outline: none;
+}
+
+.task-date {
+  padding: 0px 5px;
+  margin-left: 10px;
+  background: var(--date-input-bg, #9c9c9c);
+  border-radius: 6px;
   color: var(--text, #111827);
   border: 1px solid var(--input-border, #d1d5db) !important;
   outline: none;
@@ -50,6 +68,7 @@
 
 .column {
   background: var(--Conteiner-bg, #ffffff);
+  border: 1px solid var(--Conteiner-border, #e5e7eb);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   padding: 16px;
   border-radius: 12px;

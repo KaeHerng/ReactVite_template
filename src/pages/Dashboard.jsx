@@ -4,6 +4,10 @@ import Tooltip from "../components/Tooltip";
 import "../styles/Dashboard.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import OfferBarChart from "../components/charts/BarChart";
+import OfferPieChart from "../components/charts/PieChart";
+import { getStats } from "../utils/stats";
+import { ExportReport } from "../api";
 import Map from "../components/Map";
 import ImageGrid from "../components/ImageGrid";
 
@@ -11,6 +15,18 @@ export default function Dashboard() {
   const { t } = useTranslation();
   const user = useSelector((state) => state.user.currentUser);
   const [display, setdisplay] = useState(false);
+  const [interviews, setInterviews] = useState([]);
+
+
+  useEffect(() => {
+    const saved = localStorage.getItem("interviews");
+    
+    if (saved) setInterviews(JSON.parse(saved));
+  }, []);
+
+  const interviewstats = getStats(interviews);
+
+  console.log('interviewstats', interviews)
 
   const stats = [
     { title: "Users", value: "1,204", icon: "👥", action: () => alert("Go to Users page") },
@@ -211,11 +227,85 @@ export default function Dashboard() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, []);
 
+  const ExportData = async () => {
+    // return data to backend, backend will generate a file and return the file url, then frontend will download the file
+    // here call backend api to export data and get the file url, then download the file
+    try {
+        alert("Exporting data...");
+
+        const res = await ExportReport('excel', 'Interview Report', interviewstats);
+      
+        const fileUrl = res.file;
+
+        console.log('fileUrl' , fileUrl)
+        // const link = document.createElement("a");
+        // link.href = fileUrl;
+        // link.download = "Interview_Report.xlsx"; // 自定义名字
+        // document.body.appendChild(link);
+        // link.click();
+        // document.body.removeChild(link);
+
+
+      } catch (err) {
+        console.error(err);
+        alert(err.message);
+      }
+    alert("Exporting data...")
+  }
+
   return (
     <div className="dashboard-container">
       <div className="dashboard-banner">
         <h2 className="largeText">{t("dashboard.welcome")}, {user?.name || "Guest"}!</h2>
         <p>{t("dashboard.overview")}</p>
+      </div>
+
+      <div className="stats-container" style={{ marginBottom: 30 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 5 }}>
+          <h2 className="stats-title">📊 Interview Stats</h2>
+          <button className="buttonText buttondashboard" onClick={() => ExportData()}>Export Data</button>
+        </div>
+              
+        {/* KPI CARDS */}
+        <div className="stats-kpi-grid">
+          <div className="kpi-card">
+            <p>Total Applied</p>
+            <h3>{interviewstats.total}</h3>
+          </div>
+              
+          <div className="kpi-card">
+            <p>Accepted</p>
+            <h3>{interviewstats.accepted}</h3>
+          </div>
+              
+          <div className="kpi-card">
+            <p>Rejected</p>
+            <h3>{interviewstats.rejected}</h3>
+          </div>
+              
+          <div className="kpi-card">
+            <p>Success Rate</p>
+            <h3>
+              {interviewstats.total
+                ? ((interviewstats.accepted / interviewstats.total) * 100).toFixed(1)
+                : 0}
+              %
+            </h3>
+          </div>
+        </div>
+              
+        {/* CHART GRID */}
+        <div className="stats-chart-grid">
+          <div className="chart-card">
+            <h4>Offer Distribution</h4>
+            <OfferBarChart stats={interviewstats} />
+          </div>
+              
+          <div className="chart-card">
+            <h4>Status Distribution</h4>
+            <OfferPieChart stats={interviewstats} />
+          </div>
+        </div>
       </div>
 
       <div className="dashboard-stats">
@@ -239,9 +329,9 @@ export default function Dashboard() {
       </div>
 
       <div className="dashboard-actions">
-        <button className="buttonText" onClick={() => alert("Creating new report...")}>Create Report</button>
-        <button className="buttonText" onClick={() => alert("Exporting data...")}>Export Data</button>
-        <button className="buttonText" onClick={() => alert("Refreshing stats...")}>Refresh Stats</button>
+        <button className="buttonText buttondashboard" onClick={() => alert("Creating new report...")}>Create Report</button>
+        <button className="buttonText buttondashboard" onClick={() => alert("Exporting data...")}>Export Data</button>
+        <button className="buttonText buttondashboard" onClick={() => alert("Refreshing stats...")}>Refresh Stats</button>
       </div>
       <Tooltip text="This is a tooltip!">
         <div className="paragraph">try Hover ME !!!</div>
