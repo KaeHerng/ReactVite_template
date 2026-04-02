@@ -11,6 +11,7 @@ export default {
         savings: "储蓄管理",
         typespeed: "打字速度测试",
         components: "可复用组件",
+        interviewstats: "面试统计",
     },
     auth: {
         login: "登录",

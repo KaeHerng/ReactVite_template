@@ -11,6 +11,7 @@ export default {
         savings: "การจัดการเงินออม",
         typespeed: "การทดสอบความเร็วในการพิมพ์",
         components: "คอมโพเนนต์ที่สามารถใช้ซ้ำได้",
+        interviewstats: "สถิติการสัมภาษณ์",
     },
     auth: {
         login: "เข้าสู่ระบบ",

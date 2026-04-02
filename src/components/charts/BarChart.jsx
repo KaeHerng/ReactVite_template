@@ -8,6 +8,8 @@ import {
   ResponsiveContainer,
   Cell
 } from "recharts";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 const COLORS = ["#10b981", "#f97316", "#3b82f6", "#ef4444"];
 
@@ -32,6 +34,8 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 const OfferBarChart = ({ stats }) => {
+
+  const { theme } = useContext(ThemeContext);
   const data = [
     { name: "Accepted", value: stats.accepted },
     { name: "Rejected", value: stats.rejected },
@@ -44,7 +48,7 @@ const OfferBarChart = ({ stats }) => {
       <ResponsiveContainer>
         <BarChart data={data} barSize={40}>
           {/* grid 更淡 */}
-          <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
+          <CartesianGrid strokeDasharray="3 3" stroke={theme === "dark" ? "#444" : "#d6d6d6"} />
 
           {/* X axis */}
           <XAxis

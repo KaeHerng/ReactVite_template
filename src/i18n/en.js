@@ -11,6 +11,7 @@ export default {
         savings: "Savings",
         typespeed: "Type Speed Test",
         components: "Components",
+        interviewstats: "Interview Stats",
     },
     auth: {
         login: "Login",

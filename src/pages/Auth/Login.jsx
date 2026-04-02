@@ -16,11 +16,6 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    // if (!email || !password) {
-    //   alert("请输入邮箱和密码");
-    //   return;
-    // }
-
     try {
       const res = await loginFNC(email, password);
 
@@ -43,7 +38,7 @@ export default function Login() {
       navigate("/");
 
     } catch (err) {
-      alert(err.message);
+      alert(err.message || "Something went wrong");
     }
   };
 
@@ -68,6 +63,11 @@ export default function Login() {
         />
 
         <button className="buttonText" type="submit">{t("auth.login")}</button>
+
+        <p className="smallText" style={{ color: "black" }}>
+          {'View Page'}{" "}
+          <Link to="/stickOnScroll">{'Home Page'}</Link>
+        </p>
 
         <p className="smallText" style={{ color: "black" }}>
           {t("auth.donthaveaccount")}{" "}

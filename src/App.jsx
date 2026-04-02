@@ -80,9 +80,11 @@ const TypeSpeed = lazy(() => import("./pages/Typespeed"));
 const Flashcards = lazy(() => import("./pages/Flashcards"));
 const AboutProduct = lazy(() => import("./pages/AboutProduct"));
 const Components = lazy(() => import("./pages/componentPage"));
+const StickOnScroll = lazy(() => import("./pages/StickOnScroll")); 
+const InterviewStats = lazy(() => import("./pages/interviewStats"));
 
 export default function App() {
-  return (
+  return (    
     <BrowserRouter>
       {/* 🔥 Suspense 必须包住 Routes */}
       <Suspense fallback={<Loading />}>
@@ -90,6 +92,7 @@ export default function App() {
           {/* Public routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/stickOnScroll" element={<StickOnScroll />} />
 
           {/* Protected routes */}
           <Route
@@ -110,6 +113,7 @@ export default function App() {
             <Route path="Flashcards" element={<Flashcards />} />
             <Route path="tables" element={<Tables />} />
             <Route path="Components" element={<Components />} />
+            <Route path="interviewStats" element={<InterviewStats />} />
           </Route>
 
           {/* Fallback */}

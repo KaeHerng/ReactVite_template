@@ -339,16 +339,14 @@ export default function Interviews() {
                             : item.offerDecision === "No Response"
                             ? "red"
                             : "red",
-                      }}
-                    >
+                      }}>
                       Decision: {item.offerDecision}
                     </span>
                   )}
 
                   <button
                     className="delete-btn buttonText"
-                    onClick={() => handleDeleteInterview(item.id)}
-                  >
+                    onClick={() => handleDeleteInterview(item.id)}>
                     ❌ Delete
                   </button>
                 </div>
